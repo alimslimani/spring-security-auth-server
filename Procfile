@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar spring-security-auth-server/target/*.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar
