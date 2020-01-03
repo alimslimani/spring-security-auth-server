@@ -16,9 +16,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Value("${user.oauth.user.username}")
-        private String username;
+    private String username;
     @Value("${user.oauth.user.password}")
     private String password;
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -43,7 +45,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Autowired
-    private UserRepository userRepository;
 }
